@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+venv
+test.py
+dist
+ask_jennie.egg-info
