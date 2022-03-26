@@ -5,7 +5,7 @@ The package comes with Protocol ( Angular and Django ) + Custom automation.
 # Using the software
 The software package can be used only after log in. 
 
-![software](images/ezgif.com-gif-maker (4).gif)
+![software check](https://raw.githubusercontent.com/Ask-Jennie/ask-jennie/master/images/ezgif.com-gif-maker%20(4).gif)
 
 # Version Check
 Check software version using command `jennie version`
