@@ -1,4 +1,4 @@
-#Setting up LEMP on Ubuntu 18.0.4
+# Setting up PHPMYADMIN on Ubuntu 18.0.4
 
 ** make sure apt-get repo is up to date, to do so use command
 
