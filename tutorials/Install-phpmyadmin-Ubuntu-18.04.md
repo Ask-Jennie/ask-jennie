@@ -18,6 +18,16 @@ sudo apt-get install python3-pip
 pip3 install https://s3.ap-south-1.amazonaws.com/cdn.jennie/ask_jennie-0.0.1-py3-none-any.whl
 ```
 
+# Setting up LEMP
+Full form LEMP is Linux Nginx MySQL and PHP. Its basically installing Nginx MySQL and PHP on server.
+the setup command will install nginx and php which is required to host phpmyadmin and also setup MYSQL for the purpose.
+
+To Install use below command.
+
+```
+jennie ubuntu setup lemp
+```
+
 ## Setting up PHPMYADMIN
 
 phpmyadmin provides application interface for viewing and using database.
