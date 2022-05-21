@@ -9,7 +9,11 @@ def execute():
     if arguments[0] == "help" or arguments[0] == "--help":
         return
 
-    commands, user_info, continue_process = CommandHandler().start(arguments)
+    response = CommandHandler().start(arguments)
+    if not response:
+        return
+
+    commands, user_info, continue_process = response
     if not continue_process:
         return
 

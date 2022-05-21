@@ -50,7 +50,7 @@ class CommandHandler():
             commands = AUTOMATION_COMMANDS
         if len(arguments) == 1 and arguments[0] == "show_commands":
             return MapCommands(commands).show_commands()
-        command = MapCommands(commands).map(arguments)
+        command = MapCommands(commands).map(arguments, self.is_user_logged_in)
         return self.process_command(command)
 
 class MapCommands():
@@ -119,7 +119,7 @@ class MapCommands():
             print ("1. jennie setup\n")
             print ("2. jennie version\n")
 
-    def map(self, inputs):
+    def map(self, inputs, is_user_logged_in):
         current_command = self.commands
         for i in range(0, len(inputs)):
             if is_dict(current_command) and inputs[i] in current_command:
@@ -127,7 +127,26 @@ class MapCommands():
             elif is_arr(current_command) and inputs[i] in current_command:
                 return inputs
             else:
-                return return_error("Invalid Command. check command list using jennie show-commands")
+                if not is_user_logged_in:
+                    print ("Invalid Command. check command list using jennie show-commands")
+                    print("1. jennie setup")
+                    print("2. jennie version")
+                    return return_error("To Use jennie feature you must login using setup command")
+                else:
+                    print ("Invalid Command. check command list using jennie show-commands")
+                    print("1. jennie ubuntu setup lemp")
+                    print("2. jennie ubuntu setup phpmyadmin")
+                    print("3. jennie ubuntu setup elasticsearch")
+                    print("4. jennie ubuntu setup elk")
+                    print("5. jennie ubuntu deploy django")
+                    print("6. jennie ubuntu deploy web")
+                    print("7. jennie angular ui-lib download")
+                    print("8. jennie angular ui-lib upload")
+                    print("9. jennie angular ui-lib update")
+                    print("10. jennie angular ui-lib delete")
+                    print("11. jennie logout")
+                    print("12. jennie version")
+                    return return_error("Try using any of the above command")
 
         if is_arr(current_command):
             current_input = self.ask_user_to_select(current_command)
