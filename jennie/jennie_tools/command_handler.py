@@ -27,21 +27,21 @@ class CommandHandler():
             if command[0] == "setup":
                 info = take_user_input(USER_INPUT_FOR_SETUP)
                 self.setup.setup(info["email"])
-                return True
+                return True, None, False
             elif command[0] == "version":
                 self.show_version()
-                return True
+                return True, None, False
             else:
                 return return_error("You must log in before using any feature from ASK Jennie.")
         else:
             if command[0] == "logout":
                 self.setup.logout()
-                return None
+                return None, None, False
             elif command[0] == "version":
                 self.show_version()
-                return True
+                return True, None, False
             else:
-                return command
+                return command, self.is_user_logged_in, True
 
     def start(self, arguments):
         if not self.is_user_logged_in:

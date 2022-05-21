@@ -30,6 +30,28 @@ AUTOMATION_COMMANDS = {
         "setup": ["lemp", "phpmyadmin", "elk", "elasticsearch"],
         "deploy": ["django", "web"]
     },
+    "angular": {
+        "ui-lib": ["upload", "download", "update", "delete"],
+        "automations": [
+            "add-user-session",
+            "add-api",
+            "add-firebase-firestore",
+            "add-firebase-storage",
+            "add-firebase-realtimedb",
+            "add-airtable-api"
+        ]
+    },
+    "django": {
+        "automations": {
+            "create-api",
+            "structure-django",
+            "add-logs-manager",
+            "add-auth-gaurd",
+            "create-model",
+            "create-controller",
+            "create-view"
+        }
+    },
     "logout": "",
     "version": ""
 }
@@ -43,6 +65,26 @@ DEPLOY_INFO_COMMANDS = {
     "port": "Input port no to which the project has to be deployed",
     "domain": "Input your domain name, can add IP address as domain name"
 }
+
+ANGULAR_UI_INFO_INPUT_KEYS = {
+    "app_title": "Title for UI module",
+    "app_description": "Description for UI module",
+    "app_image": "Image file path, complete path of image",
+    "tag": "Tag (optional) for module",
+}
+
+ANGULAR_UI_INFO_INPUT_2_KEYS = {
+    "app_title": "Title for UI module",
+    "app_description": "Description for UI module",
+    "tag": "Tag (optional) for module",
+}
+
+ANGULAR_UI_KEYS = {
+    "app_title": "Title for UI module",
+    "app_description": "Description for UI module",
+    "tag": "Tag (optional) for module",
+}
+
 
 SAMPLE_ANGULAR_AUTOMATION_CONF = [
     {

@@ -16,7 +16,8 @@ def deploy_folder_nginx(port, domain):
     domain_name = domain.replace(".", "-")
     frontend_nginx_file = frontend_nginx_file.replace("DOMAIN", domain).replace("ROOT", folder_to_serve)
     open("/etc/nginx/conf.d/{}.conf".format(domain_name).format(), "w").write(frontend_nginx_file)
-    print ("\n\nFrontend Deployed on port {} on  domain {}n\n".format(port, domain))
+    os.system("sudo systemctl reload nginx")
+    print ("\n\nFrontend Deployed on port {} on  domain {}n\n\nKindly Restart Nginx to make the effect work.\n".format(port, domain))
 
 
 

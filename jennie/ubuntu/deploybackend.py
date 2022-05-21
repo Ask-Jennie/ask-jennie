@@ -38,7 +38,7 @@ def deploy_django(port, domain):
 
 
     os.system("systemctl restart uwsgi.service")
-    os.system("nginx -s reload")
+    os.system("sudo systemctl reload nginx")
     time.sleep(2)
     print ("\n\nDjango Deployed on port {} on  domain {}\n\n".format(port, domain))
 

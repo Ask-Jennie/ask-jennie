@@ -116,12 +116,17 @@ class APICalls():
         :param app_name: Automation name
         :return: True/False
         """
-        api_url = "https://api.ask-jennie.com/v1/automation/" + type + "/validate/"
+        try:
+            api_url = "https://api.ask-jennie.com/v1/automation/" + type + "/validate/"
 
-        headers = { "token": get_user_access_token()["payload"]["token"] }
-        response = self.get(api_url, headers, params={"app_name": app_name})
-        if not response["payload"]:
-            return False
+            headers = { "token": get_user_access_token()["payload"]["token"] }
+            response = self.get(api_url, headers, params={"app_name": app_name})
+            if not response["payload"]:
+                return False
+        except Exception as e:
+            print (e)
+            print ("Unable to reach Jennie Server, Please try again later.")
+            return None
         return True
 
     def add_automation_api_call(self, type, json_conf):
