@@ -6,7 +6,8 @@ from jennie.angular import *
 def execute():
     arguments = sys.argv[1:]
 
-    if arguments[0] == "help" or arguments[0] == "--help":
+    if len(arguments) > 0 and (arguments[0] == "help" or arguments[0] == "--help"):
+        resp = CommandHandler().help
         return
 
     response = CommandHandler().start(arguments)

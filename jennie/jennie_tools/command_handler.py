@@ -49,9 +49,13 @@ class CommandHandler():
         else:
             commands = AUTOMATION_COMMANDS
         if len(arguments) == 1 and arguments[0] == "show_commands":
-            return MapCommands(commands).show_commands()
+            return MapCommands(commands).show_commands(self.is_user_logged_in)
         command = MapCommands(commands).map(arguments, self.is_user_logged_in)
         return self.process_command(command)
+
+    @property
+    def help(self):
+        return MapCommands(None).show_commands(self.is_user_logged_in)
 
 class MapCommands():
     def ask_user_to_select(self, options):
@@ -104,20 +108,41 @@ class MapCommands():
         self.commands = commands
         self.all_commands = []
 
-    def show_commands(self):
-        if self.commands == AUTOMATION_COMMANDS:
-            print("1. jennie ubuntu setup lemp")
-            print("2. jennie ubuntu setup phpmyadmin")
-            print("3. jennie ubuntu setup elasticsearch")
-            print("4. jennie ubuntu setup elk")
-            print("5. jennie ubuntu deploy django")
-            print("6. jennie ubuntu deploy web")
-            print("7. jennie logout")
-            print("8. jennie version")
+    def show_commands(self, is_user_logged_in):
+        '''
+            Takes user login status and print commands available.
+        '''
+        if not is_user_logged_in:
+            print("1. jennie setup")
+            print("2. jennie version")
+            return return_error("To Use jennie feature you must login using setup command")
+        else:
+            all_commands = []
+            def fetch_from_arr(arr, all_commands, level=2, stack=None):
+                for type in arr:
+                    if level == 3:
+                        all_commands.append(
+                            "jennie {} {} {}".format(platform, stack, type)
+                        )
+                    elif level == 2:
+                        all_commands.append(
+                            "jennie {} {}".format(platform, type)
+                        )
+                return all_commands
 
-        elif self.commands == SETUP_COMMANDS:
-            print ("1. jennie setup\n")
-            print ("2. jennie version\n")
+            for platform in AUTOMATION_COMMANDS:
+                if is_arr(AUTOMATION_COMMANDS[platform]):
+                    all_commands = fetch_from_arr(platform, all_commands)
+                else:
+                    for stack in AUTOMATION_COMMANDS[platform]:
+                        if is_arr(AUTOMATION_COMMANDS[platform][stack]):
+                            all_commands = fetch_from_arr(AUTOMATION_COMMANDS[platform][stack], all_commands, level=3, stack=stack)
+            counter = 1
+            print ("\nAvailable Commands\n")
+            for key in all_commands:
+                print ("{}. {}".format(str(counter), key))
+                counter += 1
+            return return_error("\nUser Login Status : True\n")
 
     def map(self, inputs, is_user_logged_in):
         current_command = self.commands
@@ -159,6 +184,6 @@ class MapCommands():
 
             current_input = self.ask_user_to_select(list_commands)
             inputs.append(current_input)
-            self.map(inputs)
+            self.map(inputs, is_user_logged_in)
 
         return inputs

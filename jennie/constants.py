@@ -32,26 +32,26 @@ AUTOMATION_COMMANDS = {
     },
     "angular": {
         "ui-lib": ["upload", "download", "update", "delete"],
-        "automations": [
-            "add-user-session",
-            "add-api",
-            "add-firebase-firestore",
-            "add-firebase-storage",
-            "add-firebase-realtimedb",
-            "add-airtable-api"
-        ]
+        # "automations": [
+        #     "add-user-session",
+        #     "add-api",
+        #     "add-firebase-firestore",
+        #     "add-firebase-storage",
+        #     "add-firebase-realtime-db",
+        #     "add-airtable-api"
+        # ]
     },
-    "django": {
-        "automations": {
-            "create-api",
-            "structure-django",
-            "add-logs-manager",
-            "add-auth-gaurd",
-            "create-model",
-            "create-controller",
-            "create-view"
-        }
-    },
+    # "django": {
+    #     "automations": {
+    #         "create-api",
+    #         "structure-django",
+    #         "add-logs-manager",
+    #         "add-auth-guard",
+    #         "create-model",
+    #         "create-controller",
+    #         "create-view"
+    #     }
+    # },
     "logout": "",
     "version": ""
 }
