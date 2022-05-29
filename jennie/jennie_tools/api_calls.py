@@ -104,7 +104,7 @@ class APICalls():
         :param password: user password
         :return: API Call response JSON.
         """
-        api_url = "https://api.ask-jennie.com/v1/login/"
+        api_url = "http://13.127.127.58/v1/login/"
         body = {"email": email, "password": password}
         response = self.post(url=api_url, body=body)
         return response

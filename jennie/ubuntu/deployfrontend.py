@@ -7,10 +7,15 @@ def deploy_folder_nginx(port, domain):
     os.system("apt-get install nginx -y")
     os.system("service nginx start")
 
-    if port == "http":
+    if port == "http" or port == "80":
         frontend_nginx_file = NGINX_HTTP_CONF
-    elif port == "https":
+        os.system("ufw allow 'Nginx Full'")
+    elif port == "https" or port == "443":
         frontend_nginx_file = NGINX_HTTPS_CONF
+        os.system("sudo add-apt-repository ppa:certbot/certbot")
+        os.system("sudo apt install python-certbot-nginx -y")
+        os.system("certbot --nginx -d {}".format(domain))
+        os.system("ufw allow 'Nginx Full'")
     else:
         frontend_nginx_file = NGINX_PORT_CONF.replace("PORT", port)
     domain_name = domain.replace(".", "-")

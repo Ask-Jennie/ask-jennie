@@ -5,6 +5,28 @@ from jennie.angular import *
 
 def execute():
     arguments = sys.argv[1:]
+    pre_command_str = "-".join(arguments)
+
+    if pre_command_str == "ubuntu-setup-elk":
+        setup_elasticsearchkibana()
+        return
+    elif pre_command_str == "ubuntu-setup-elasticsearch":
+        setup_elasticsearch()
+        return
+    elif pre_command_str == "ubuntu-setup-lemp":
+        setup_lemp()
+        return
+    elif pre_command_str == "ubuntu-setup-phpmyadmin":
+        install_phpmyadmin()
+        return
+    elif pre_command_str == "ubuntu-deploy-web":
+        info = take_user_input(DEPLOY_INFO_COMMANDS)
+        deploy_folder_nginx(info["port"], info["domain"])
+        return
+    elif pre_command_str == "ubuntu-deploy-django":
+        info = take_user_input(DEPLOY_INFO_COMMANDS)
+        deploy_django(info["port"], info["domain"])
+        return
 
     if len(arguments) > 0 and (arguments[0] == "help" or arguments[0] == "--help"):
         resp = CommandHandler().help

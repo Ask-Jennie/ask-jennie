@@ -58,7 +58,11 @@ AUTOMATION_COMMANDS = {
 
 SETUP_COMMANDS = {
     "setup": "",
-    "version": ""
+    "version": "",
+    "ubuntu": {
+        "setup": ["lemp", "phpmyadmin", "elk", "elasticsearch"],
+        "deploy": ["django", "web"]
+    }
 }
 
 DEPLOY_INFO_COMMANDS = {
