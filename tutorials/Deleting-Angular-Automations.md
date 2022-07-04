@@ -11,6 +11,4 @@ jennie angular automations delete <automation-name>
 ```
 
 ## What happens?
-Automation with <automation-name> gets deleted on the server. 
-
-*Owner of the automation can only delete automation from server
+Automation with <automation-name> gets deleted from the server. 
