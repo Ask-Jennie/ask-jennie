@@ -84,4 +84,6 @@ File store jennie configuration for specific automation.
   "updated_on": "2022-07-05T04:01:11.143232Z"
 }
 ```
+
+Uploaded Library can be found at automation.ask-jennie.com
  
