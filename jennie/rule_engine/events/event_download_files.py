@@ -11,6 +11,7 @@ config format:
 
 from jennie.constants import *
 from jennie.jennietools.api_calls import APICalls
+from jennie.jennietools.replace_image_from_html import replace_local_images
 
 
 def execute_download_files(event):
@@ -50,6 +51,8 @@ def validate_download_files(event, type, app_name):
         if KEY_FILE_PATH not in fileinfo:
             print("Missing key '{}' in one of the events of download files".format(KEY_FILE_PATH))
         else:
+            print (fileinfo[KEY_FILE_PATH], app_name, type)
+            replace_local_images(fileinfo[KEY_FILE_PATH])
             fileinfo[KEY_FILE_LINK] = APICalls().upload_text_file(
                 fileinfo[KEY_FILE_PATH],
                 app_name=app_name,

@@ -12,7 +12,7 @@ import json, os
 from jennie.logger import LogginMixin
 
 println = LogginMixin().print
-def execute_update_angular_json(angular_json_filepath, event):
+def execute_update_angular_json(event, angular_json_filepath="angular.json"):
     """
     Append for script / style to angular.json.
     :param angular_json_filepath: angular.json
@@ -27,8 +27,6 @@ def execute_update_angular_json(angular_json_filepath, event):
     controller = UpdateAngularJSONFile(
         angular_json_filepath
     )
-
-
 
     if KEY_STYLES in event:
         status = controller.add_styles(event[KEY_STYLES])

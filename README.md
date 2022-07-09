@@ -42,15 +42,15 @@ Not logged in, To use the software try login using jennie setup [registered_emai
 Command | Type | About 
 --- | --- | ---
 `jennie version` | **Setup** | Shows the software version, user information and software stable version no. 
-`jennie setup` | **Setup** | Log in inside ASK Jennie Package, Automations start working only if user has logged in  
-`jennie logout` | **Setup** | Logout from ASK Jennie
+`jennie setup` | **Setup** | Log in inside ASK Jennie Package, Automations start working only if user has logged in
+`jennie angular ui-lib upload` | **Setup** | Log in inside ASK Jennie Package, Automations start working only if user has logged in
 `jennie ubuntu setup lemp` | **Automation** | Install LEMP (nginx, php, mysql) on ubuntu server/desktop
 `jennie ubuntu setup phpmyadmin` | **Automation** | Install phpmyadmin on ubuntu server/desktop
 `jennie ubuntu setup elasticsearch` | **Automation** | Install elasticsearch DB on ubuntu server/desktop
 `jennie ubuntu setup elk` | **Automation** | Install ELK (elastic, logstash, kibana) on ubuntu server/desktop
 `jennie ubuntu deploy django` | **Automation** | Deploy Django Project
 `jennie ubuntu deploy web` | **Automation** | Deploy HTML Project ( normal html or angular build files )
-
+`jennie logout` | **Setup** | Logout from ASK Jennie
 
 
 __version__ = "0.0.1"

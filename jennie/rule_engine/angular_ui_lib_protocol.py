@@ -61,6 +61,7 @@ class AngularUILibProtocol():
 
     def update(self, app_config, automation_conf):
         println("\nAutomation conf created", automation_conf)
+        println("\nApp Config", app_config)
         app_config["app_image"] = automation_conf["app_image"]
         del automation_conf["app_image"]
 

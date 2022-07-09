@@ -1,12 +1,5 @@
 from jennie.constants import *
-from jennie.rule_engine.events.event_download_files import execute_download_files
-from jennie.rule_engine.events.event_create_angular_component import execute_create_angular_component
-from jennie.rule_engine.events.event_angular_ui_lib import execute_angular_ui_lib
-from jennie.rule_engine.events.event_angular_automations import execute_angular_automations
-from jennie.rule_engine.events.event_create_angular_services import execute_create_angular_services
-from jennie.rule_engine.events.event_install_npm_library import execute_install_npm_libraries
-from jennie.rule_engine.events.event_update_angular_json import execute_update_angular_json
-from jennie.rule_engine.events.event_update_angular_modules import execute_update_angular_module
+from jennie.rule_engine.events.events_mapper import RuleEngineEvents
 from jennie.logger import LogginMixin
 
 println = LogginMixin().print
@@ -38,26 +31,44 @@ def execute_events(automation_conf, automation_type):
         for event in automation_conf:
             println("Running Automation Event: \n\n", json.dumps(event, indent=2), "\n\n")
             println (event[KEY_EVENT_TYPE])
-            if event[KEY_EVENT_TYPE] == KEY_EVENT_DOWNLOAD_FILES:
-                execute_download_files(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_CREATE_COMPONENT:
-                execute_create_angular_component(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_ANGULAR_UI_LIB:
-                execute_angular_ui_lib(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_ANGULAR_AUTOMATIONS:
-                execute_angular_automations(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_ANGULAR_SERVICES:
-                execute_create_angular_services(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_INSTALL_NPM_LIBRARY:
-                print ("Installing NPM Dependencies")
-                execute_install_npm_libraries(event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_UPDATE_ANGULAR_JSON:
-                execute_update_angular_json(angular_json_filepath="angular.json", event=event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_UPDATE_ANGULAR_MODULE:
-                print ("Updating Angular Module")
-                execute_update_angular_module(angular_module_file_path="src/app/app.module.ts", event=event)
-            elif event[KEY_EVENT_TYPE] == KEY_EVENT_UPDATE_ANGULAR_ROUTES:
-                execute_update_angular_module(event=event, angular_module_file_path="src/app/app-routing.module.ts")
-            else:
-                println("\nUnknown Event =============")
+            if event[KEY_EVENT_TYPE] not in RuleEngineEvents:
+                raise ("\n\nNot a valid event, check event type")
+
+            RuleEngineEvents[event[KEY_EVENT_TYPE]]["execute"](event)
+
     return True
+
+def validate_events(automation_conf, automation_type, app_name):
+    validated = validate_event_types(automation_conf, automation_type)
+    println ("\n\nAutomation events are validated for type ", automation_type, validated, automation_conf)
+    validated_events = []
+    if validated:
+        for event in automation_conf:
+            println("Validating Automation Event: \n\n", json.dumps(event, indent=2), "\n\n")
+            if event[KEY_EVENT_TYPE] not in RuleEngineEvents:
+                raise ("\n\nNot a valid event, check event type")
+
+
+            if "validate_extra_params" in event:
+                if "app_name" in event["validate_extra_params"] and "type" in event["validate_extra_params"]:
+                    event_info = RuleEngineEvents[event[KEY_EVENT_TYPE]]["validate"](event, app_name=app_name, type=automation_type)
+                elif "app_name" in event["validate_extra_params"]:
+                    event_info = RuleEngineEvents[event[KEY_EVENT_TYPE]]["validate"](event, app_name=app_name)
+                elif "type" in event["validate_extra_params"]:
+                    event_info = RuleEngineEvents[event[KEY_EVENT_TYPE]]["validate"](event, type=automation_type)
+                else:
+                    event_info = RuleEngineEvents[event[KEY_EVENT_TYPE]]["validate"](event)
+            else:
+                event_info = RuleEngineEvents[event[KEY_EVENT_TYPE]]["validate"](event)
+
+            if not event_info:
+                return False
+
+            if event_info == True:
+                event_info = event
+
+            validated_events.append(event_info)
+    else:
+        print ("Invalid automation events, check if event type is compatible")
+        return False
+    return validated_events

@@ -2,7 +2,7 @@ import os
 from jennie.jennietools.api_calls import APICalls
 from jennie.constants import *
 from jennie.rule_engine.events import execute_events
-from jennie.rule_engine.events.validate_events import validate_events
+from jennie.rule_engine.events import validate_events
 from jennie.logger import LogginMixin
 from jennie.helper import write_json_file, read_json_file
 from jennie.jennietools.userinput import get_basic_automation_conf

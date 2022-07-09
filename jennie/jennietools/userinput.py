@@ -71,6 +71,20 @@ def get_basic_automation_conf(app_name, type, stack, default_inputs=None):
             configuration["dependencies"] = ["bootstrap-5"]
         else:
             configuration["dependencies"] = []
+    else:
+        if "stack" in  default_inputs:
+            configuration["stack"] = default_inputs["stack"]
+
+        if "type" in  default_inputs:
+            configuration["type"] = default_inputs["type"]
+
+        if "app_image" in default_inputs:
+            configuration["app_image"] = default_inputs["app_image"]
+
+        if type == "angular-ui-lib":
+            configuration["dependencies"] = ["bootstrap-5"]
+        else:
+            configuration["dependencies"] = []
     return configuration
 
 

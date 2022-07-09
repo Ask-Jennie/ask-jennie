@@ -12,7 +12,7 @@
 | 8. | download-files | ALL | Download and place file content inside project. Copy & Paste Event |
 | 9. | install-npm-library | angular-automations | Install a list of npm libraries provided. |
 | 10. | update-angular-json | angular-automations | Update angular.json file |
-| 11. | update-angular-routes | angular-automations | Update angular routes |
-| 12. | update-angular-modules | angular-automations | Update angular modules files with list of modules and providers |
+| 11. | update-angular-route | angular-automations | Update angular routes |
+| 12. | update-angular-module | angular-automations | Update angular modules files with list of modules and providers |
 | 13. | update-settings-py | django-automations | Update Django settings.py file |
 | 14. | update-urls-py | django-automations | Update Django urls.py file |

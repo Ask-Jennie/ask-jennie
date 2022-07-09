@@ -17,7 +17,7 @@ def execute_create_angular_services(event):
     }
     :return: True/False
     """
-    os.system("ng g c {}".format(event["service_name"]))
+    os.system("ng g s {}".format(event["service_name"]))
     return True
 
 def validate_create_angular_services(event):

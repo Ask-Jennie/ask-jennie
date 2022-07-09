@@ -12,6 +12,7 @@ class UpdateAngularModuleFile():
         for modulename in imports:
             self.content = self.content.replace("BrowserModule,", "BrowserModule," + "\n" + "    " + modulename + ",")
             self.content = self.content.replace("import { BrowserModule } from '@angular/platform-browser';", "import { BrowserModule } from '@angular/platform-browser';" + "\n" + imports[modulename])
+        self.content = self.content.replace(",],", "],")
         open(self.filepath, "w").write(self.content)
         return True
 
@@ -19,10 +20,11 @@ class UpdateAngularModuleFile():
         for providername in providers:
             self.content = self.content.replace("providers: [", "providers: [" + "\n" + "    " + providername + ",")
             self.content = self.content.replace("import { BrowserModule } from '@angular/platform-browser';", "import { BrowserModule } from '@angular/platform-browser';" + "\n" + providers[providername])
+        self.content = self.content.replace(",],", "],")
         open(self.filepath, "w").write(self.content)
         return True
 
-def execute_update_angular_module(angular_module_file_path, event):
+def execute_update_angular_module(event, angular_module_file_path="src/app/app.module.ts"):
     println("Updating angular module", angular_module_file_path)
     if KEY_IMPORTS in event:
         println("Updating angular module with imports", event[KEY_IMPORTS])

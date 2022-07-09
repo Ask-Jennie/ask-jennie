@@ -12,7 +12,7 @@ setuptools.setup(
      version=__version__,
      author="ASK Jennie",
      py_modules=["jennie"],
-     install_requires=['requests'],
+     install_requires=['requests', 'bs4'],
      entry_points={
         'console_scripts': [
             'jennie=jennie:run'

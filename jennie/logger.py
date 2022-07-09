@@ -1,6 +1,7 @@
+from jennie.configration import IS_LOGGER_ACTIVE
 class LogginMixin():
     def __init__(self):
-        self.debug = True
+        self.debug = IS_LOGGER_ACTIVE
 
     def print(self, *args):
         string = ""

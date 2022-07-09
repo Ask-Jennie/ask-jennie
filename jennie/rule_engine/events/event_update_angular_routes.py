@@ -27,7 +27,7 @@ export class AppRoutingModule { }'''
     data = upper_content + rest_content
     open(filepath, "w").write(data)
 
-def execute_update_angular_routes(angular_routes_file_path, event):
+def execute_update_angular_routes(event, angular_routes_file_path="src/app/app-routing.module.ts"):
     routes = event[KEY_ROUTES]
     if KEY_AUTH_GAURD_FILE_LINK in event:
         authgaurd_file = APICalls().download_text_file(event[KEY_AUTH_GAURD_FILE_LINK])

@@ -1,22 +1,5 @@
 from jennie.constants import *
-
-def ask_to_select(inputs):
-    input_arr = []
-    for key in inputs:
-        input_arr.append(key)
-
-    idx = 1
-    print ("Select Subcommand ...")
-    for key in input_arr:
-        print (str(idx) + ". " + key)
-        idx += 1
-
-    try:
-        selected = int(input(">>"))
-        return inputs[input_arr[selected-1]], input_arr[selected-1]
-    except Exception as e:
-        print ("Invalid Option try selecting again")
-        return ask_to_select(inputs)
+from jennie.helper import ask_to_select
 
 def map_inputs(arguments):
     args = arguments
