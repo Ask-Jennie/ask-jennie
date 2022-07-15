@@ -1,12 +1,33 @@
-# Installing Jennie
 
-```bash
-pip3 install https://s3.ap-south-1.amazonaws.com/cdn.jennie/ask_jennie-0.0.1-py3-none-any.whl
+# Installation
+The software can be using pip3 package manager
+
+```commandline
+pip3 install https://s3.ap-south-1.amazonaws.com/cdn.jennie/ask_jennie-0.0.2-py3-none-any.whl
 ```
-The command then install Jennie
 
-## Dependencies
+The software package can be used only after log in. 
 
-- Python3
-- requests
+To login use 
+```
+jennie setup <email-address>
+```
 
+### Check the demo below
+
+![software check](https://raw.githubusercontent.com/Ask-Jennie/ask-jennie/master/images/ezgif.com-gif-maker%20(4).gif)
+
+# Version Check
+Check software version using command `jennie version`
+
+**output (if logged in)**
+```
+Version : A.B.C
+Author : ASK Jennie Developer <saurabh@ask-jennie.com>
+Stable Version : X.Y.Z
+Latest Version : XX.YY.ZZ
+The package targets protocol for uploading and reusing task and libraries
+
+User Name : Saurabh Pandey
+User Email : saurabh@ask-jennie.com
+```
