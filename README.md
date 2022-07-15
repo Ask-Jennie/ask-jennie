@@ -28,3 +28,7 @@ The software follows the below structure.
 - `jennie angular ui-lib upload`
 
 - `jennie angular ui-lib download`
+
+- `jennie django automations download`
+
+- `jennie django automations upload`
