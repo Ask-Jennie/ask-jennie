@@ -1,4 +1,5 @@
-def execute_update_urls_py(urls_py_filepath, event):
+def execute_update_urls_py(event):
+
     return True
 
 def validate_update_urls_py(event):

@@ -16,6 +16,17 @@ def read_json_file(filepath):
 def check_if_file_exits(path):
     isFile = os.path.isfile(path)
 
+def list_all_files_from_folder(folder_path):
+    # list to store files
+    res = []
+
+    # Iterate directory
+    for path in os.listdir(folder_path):
+        # check if current path is a file
+        if os.path.isfile(os.path.join(folder_path, path)):
+            res.append(path)
+    return res
+
 def ask_to_select(inputs):
     input_arr = []
     for key in inputs:

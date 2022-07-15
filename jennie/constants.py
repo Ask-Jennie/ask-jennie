@@ -3,19 +3,26 @@ import os, json
 KEY_STACK_ANGULAR_AUTOMATION = "angular-automations"
 KEY_STACK_ANGULAR_UI_LIB = "angular-ui-lib"
 KEY_STACK_DJANGO_AUTOMATIONS = "django-automations"
+KEY_STACK_PYTHON_AUTOMATIONS = "python-automations"
 
 
 KEY_EVENT_DOWNLOAD_FILES = "download-files"
 KEY_EVENT_CREATE_COMPONENT = "create-component"
+KEY_EVENT_CREATE_PYTHON_PACKAGE = "create-python-package"
+KEY_EVENT_DJANGO_AUTOMATIONS = "django-automations"
+KEY_EVENT_UPDATE_URL_PY = "update-urls-py"
+KEY_EVENT_CUSTOM_AUTOMATION = "custom-automations"
 KEY_EVENT_ANGULAR_UI_LIB = "angular-ui-lib"
 KEY_EVENT_ANGULAR_AUTOMATIONS = "angular-automations"
 KEY_EVENT_ANGULAR_SERVICES = "create-services"
-KEY_EVENT_INSTALL_NPM_LIBRARY = "install-npm-libraries"
+KEY_EVENT_INSTALL_NPM_LIBRARY = "install-npm-library"
 KEY_EVENT_UPDATE_ANGULAR_JSON = "update-angular-json"
 KEY_EVENT_UPDATE_ANGULAR_MODULE = "update-angular-module"
 KEY_EVENT_UPDATE_ANGULAR_ROUTES = "update-angular-routes"
 KEY_EVENT_ADD_NG_LIBRARIES = "add-ng-libraries"
 KEY_EVENT_REPLACE_IN_FILE = "replace-in-file"
+KEY_EVENT_REPLACE_COMPONENT_TS = "replace-component-ts"
+KEY_EVENT_COPY_COMPONENT = "copy-component"
 
 KEY_EVENT_TYPE = "event_type"
 KEY_LIBS = "libs"
@@ -34,6 +41,7 @@ KEY_STYLES = "styles"
 KEY_SCRIPTS = "scripts"
 KEY_AUTH_GAURD_FILE_LINK = "auth_gaurd_file_link"
 KEY_AUTH_GAURD_FILE_PATH = "auth_gaurd_file"
+KEY_COMPONENT_NAME = "component_name"
 
 
 AUTOMATION_COMMANDS = {

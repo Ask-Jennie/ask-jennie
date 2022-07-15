@@ -1,14 +1,12 @@
-# Protocol : Deleting Angular UI Module
-
-> :warning: **The command delete an uploaded library, please check before use**
-
-> :warning: **Owner of the automation can only delete automation from server**
+# Deleting Angular UI Module
 
 ## Protocol Command
 
 ```
-jennie angular ui-lib delete <module-name>
+jennie angular ui-lib delete <automation-name>
 ```
 
 ## What happens?
-UI module with <module-name> gets deleted from the server. 
+UI Module with <ui-lib-name> gets deleted from the server.
+
+*Only author has permission to delete a module*

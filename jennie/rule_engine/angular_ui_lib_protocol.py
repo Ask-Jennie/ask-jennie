@@ -4,7 +4,7 @@ from jennie.jennietools.api_calls import APICalls
 from jennie.jennietools.checks import check_angular_ui_module_directory, check_if_angular_project
 from jennie.jennietools.userinput import get_app_image
 from jennie.rule_engine.events.event_download_files import validate_download_files
-from jennie.rule_engine.events import execute_events
+from jennie.rule_engine.events.manager import execute_events
 from jennie.logger import LogginMixin
 from jennie.helper import *
 from jennie.constants import *

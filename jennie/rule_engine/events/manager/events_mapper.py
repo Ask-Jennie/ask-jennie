@@ -10,6 +10,12 @@ from jennie.rule_engine.events.event_update_angular_modules import validate_upda
 from jennie.rule_engine.events.event_update_angular_routes import validate_update_angular_routes
 from jennie.rule_engine.events.event_add_ng_library import validate_add_ng_libraries
 from jennie.rule_engine.events.event_replace_in_file import validate_replace_in_file
+from jennie.rule_engine.events.replace_component_ts import validate_replace_component_ts
+from jennie.rule_engine.events.event_create_python_package import validate_create_python_package
+from jennie.rule_engine.events.event_django_automations import validate_django_automations
+from jennie.rule_engine.events.event_update_urls import validate_update_urls_py
+from jennie.rule_engine.events.event_custom_automations import validate_custom_automations
+from jennie.rule_engine.events.event_copy_angular_component import validate_copy_angular_component
 
 from jennie.rule_engine.events.event_download_files import execute_download_files
 from jennie.rule_engine.events.event_create_angular_component import execute_create_angular_component
@@ -22,6 +28,12 @@ from jennie.rule_engine.events.event_update_angular_modules import execute_updat
 from jennie.rule_engine.events.event_update_angular_routes import execute_update_angular_routes
 from jennie.rule_engine.events.event_add_ng_library import execute_add_ng_libraries
 from jennie.rule_engine.events.event_replace_in_file import execute_replace_in_file
+from jennie.rule_engine.events.replace_component_ts import execute_replace_component_ts
+from jennie.rule_engine.events.event_create_python_package import execute_create_python_package
+from jennie.rule_engine.events.event_django_automations import execute_django_automations
+from jennie.rule_engine.events.event_update_urls import execute_update_urls_py
+from jennie.rule_engine.events.event_custom_automations import execute_custom_automations
+from jennie.rule_engine.events.event_copy_angular_component import execute_copy_angular_component
 
 
 RuleEngineEvents = {
@@ -70,5 +82,31 @@ RuleEngineEvents = {
     KEY_EVENT_REPLACE_IN_FILE: {
         "validate": validate_replace_in_file,
         "execute": execute_replace_in_file,
+    },
+    KEY_EVENT_REPLACE_COMPONENT_TS: {
+        "validate": validate_replace_component_ts,
+        "execute": execute_replace_component_ts,
+        "validate_extra_params": ["app_name", "type"]
+    },
+    KEY_EVENT_CREATE_PYTHON_PACKAGE: {
+        "validate": validate_create_python_package,
+        "execute": execute_create_python_package
+    },
+    KEY_EVENT_DJANGO_AUTOMATIONS: {
+        "validate": validate_django_automations,
+        "execute": execute_django_automations
+    },
+    KEY_EVENT_UPDATE_URL_PY: {
+        "validate": validate_update_urls_py,
+        "execute": execute_update_urls_py
+    },
+    KEY_EVENT_CUSTOM_AUTOMATION: {
+        "validate": validate_custom_automations,
+        "execute": execute_custom_automations
+    },
+    KEY_EVENT_COPY_COMPONENT: {
+        "validate": validate_copy_angular_component,
+        "execute": execute_copy_angular_component,
+        "validate_extra_params": ["app_name", "type"]
     }
 }

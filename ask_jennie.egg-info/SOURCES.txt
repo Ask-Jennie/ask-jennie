@@ -33,6 +33,7 @@ jennie/rule_engine/events/__init__.py
 jennie/rule_engine/events/event_add_ng_library.py
 jennie/rule_engine/events/event_angular_automations.py
 jennie/rule_engine/events/event_angular_ui_lib.py
+jennie/rule_engine/events/event_copy_angular_component.py
 jennie/rule_engine/events/event_create_angular_component.py
 jennie/rule_engine/events/event_create_angular_services.py
 jennie/rule_engine/events/event_create_python_package.py
@@ -45,9 +46,10 @@ jennie/rule_engine/events/event_replace_in_file.py
 jennie/rule_engine/events/event_update_angular_json.py
 jennie/rule_engine/events/event_update_angular_modules.py
 jennie/rule_engine/events/event_update_angular_routes.py
-jennie/rule_engine/events/event_update_settings.py
 jennie/rule_engine/events/event_update_urls.py
-jennie/rule_engine/events/events_mapper.py
+jennie/rule_engine/events/replace_component_ts.py
+jennie/rule_engine/events/manager/__init__.py
+jennie/rule_engine/events/manager/events_mapper.py
 jennie/setup/__init__.py
 jennie/ubuntu/__init__.py
 jennie/ubuntu/deploybackend.py

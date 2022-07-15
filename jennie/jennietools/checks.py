@@ -6,7 +6,7 @@ from jennie.logger import LogginMixin
 
 println = LogginMixin().print
 
-def check_angular_ui_module_directory(directory):
+def check_angular_ui_module_directory(directory, return_component_file=False):
     """
     Check if directory contain files releated to angular ui module
     return back events for download files for UI module.
@@ -24,6 +24,9 @@ def check_angular_ui_module_directory(directory):
     elif component_name + ".component.html" not in files:
         raise ValueError("Missing CSS file for the component")
 
+    if return_component_file:
+        println ("Return Component File", component_name)
+        return component_name + ".component.ts"
     image_file_path = None
     for file in files:
         if ".png" in file:

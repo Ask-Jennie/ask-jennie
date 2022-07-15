@@ -7,6 +7,12 @@ from jennie.jennietools.checks import *
 println = LogginMixin().print
 
 class AngularUILib():
+    """
+    The protocol col aims to store & reuse UI
+    component from Angular Project.
+
+    The automation conf has only two supported events ( create-component, download files)
+    """
     def __init__(self, commands, user_info):
         self.args = commands
         self.STACK = "angular"

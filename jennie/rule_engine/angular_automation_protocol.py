@@ -1,8 +1,8 @@
 import os
 from jennie.jennietools.api_calls import APICalls
 from jennie.constants import *
-from jennie.rule_engine.events import execute_events
-from jennie.rule_engine.events import validate_events
+from jennie.rule_engine.events.manager import execute_events
+from jennie.rule_engine.events.manager import validate_events
 from jennie.logger import LogginMixin
 from jennie.helper import write_json_file, read_json_file
 from jennie.jennietools.userinput import get_basic_automation_conf
@@ -36,6 +36,7 @@ class AngularAutomationProtocol():
         if "automation_conf" in jsonConf and is_arr(jsonConf["automation_conf"]):
             validated_events = validate_events(jsonConf["automation_conf"], self.TYPE, jsonConf["app_name"])
             if validated_events:
+                jsonConf["automation_conf"] = validated_events
                 jsonInfo = APICalls().upload_automation_api_call(self.TYPE, jsonConf)["payload"]
                 println("Uploaded Config\n", json.dumps(jsonInfo, indent=2))
                 write_json_file("jennie.conf.json", jsonInfo)
