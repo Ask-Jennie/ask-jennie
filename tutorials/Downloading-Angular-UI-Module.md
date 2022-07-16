@@ -6,7 +6,7 @@ Downloading an angular UI Module is quite simple, just go inside angular project
 jennie angular ui-lib download <module-name>
 ```
 
-One the command finish processing an angular component ui-lib / &gt; module-name &lt; will be created later.
+One the command finish processing an download component can be found inside ui-lib directory in app. Later one could use the component as component in route or inside other component.
+
 Each component listed in [automation.ask-jennie.com](https://automations.ask-jennie.com) comes with proper usage info.
 
-Later one could use the component as component in route or inside other component.
