@@ -3,9 +3,13 @@
 ## Steps to upload
 
 - Check if your component is working properly and is independent of other project component.
+
 - If possible make @Input & @Output tags are properly used to make the component modular.
+
 - Take a screenshot of component and keep it inside component page.
+
 - Open terminal and navigate to component i.e. `src/app/<component-name>`
+
 - Upload Component to Server using jennie
 
 ```bash
