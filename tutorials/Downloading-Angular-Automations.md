@@ -26,7 +26,7 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 </tr>
 <tr>
 <td>adding-ng-library</td>
-<td>Adds list of angular library to the project</td>
+<td>A list of all the libraries that are present in "libs" is added to project using `ng add` command.</td>
 <td><pre>
 {
     "libs": [],
