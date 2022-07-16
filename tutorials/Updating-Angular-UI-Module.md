@@ -1,6 +1,6 @@
 # Uploading Angular UI-Module
 
-An author or the library can update their ui module info within the server anytime using upload event type.
+An author or the library can update their ui module info within the server anytime using update event type.
 
 ### Steps to update already upload library.
 
