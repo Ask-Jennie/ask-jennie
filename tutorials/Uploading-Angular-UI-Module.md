@@ -1,4 +1,4 @@
-# Uploading-Angular-UI-Module.md
+# Uploading Angular UI-Module
 
 Using Jennie package developers can upload UI module as Angular component to server.
 Later these modules can be reused.
@@ -36,7 +36,7 @@ Input path for application image
 ```
 
 The software then upload component files and create automation details which is further uploaded to server.
-Also jennie.conf.json is created under the directory.
+Also, jennie.conf.json is created under the directory.
 
 The final automation configuration is generated and stored in the same directory as `jennie.conf.json` file. 
 
