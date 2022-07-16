@@ -34,10 +34,10 @@ def validate_download_files(event, type, app_name):
     """
     validate if libs key is present and hold list of libraries.
     validate all libraries exits on jennie server.
-    :param event: {
-        "libs": ["NAME_OF_COMPONENT"],
-        "event_name" : "django-automations"
-    }
+    :param files: [{
+        file_path: file link from S3 that is required to be downloaded,
+        out_path: Output Path where the files has to be uploaded
+    }]
     :return: True / False
     """
     if "files" not in event:
