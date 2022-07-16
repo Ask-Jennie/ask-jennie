@@ -91,5 +91,5 @@ The final automation configuration is generated and stored in the same directory
 }
 ```
 
-Uploaded Library can be found at automation.ask-jennie.com
+*This is a sample application configuration and might differ with original one*
  
