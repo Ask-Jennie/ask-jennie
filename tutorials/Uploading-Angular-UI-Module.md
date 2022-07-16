@@ -18,17 +18,17 @@ jennie angular ui-lib upload
 #### Output 
 
 ```bash
-Title for automation module
+Title for UI module
 >> Application title 
 
-Description for automation module
+Description for UI module
 >> Application Description, max 200 chracter. 
 
-Tag (optional) for automation module
+Tag (optional) for UI module
 >> Category for UI Module, Optional if not used UI module will go into Others 
 ```
  
-If Image File is not found under component directory, option to enter image path is also shown.
+If Image File is not found under component directory, option pops over asking for image file path
 
 ```bash
 Input path for application image
