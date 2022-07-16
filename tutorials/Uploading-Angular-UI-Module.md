@@ -1,15 +1,14 @@
 # Uploading-Angular-UI-Module.md
 
+Using Jennie package developers can upload UI module as Angular component to server.
+Later these modules can be reused.
+
 ## Steps to upload
 
-- Check if your component is working properly and is independent of other project component.
-
-- If possible make @Input & @Output tags are properly used to make the component modular.
-
+- **Working Of Component** : Check if your component is working properly and is independent of other project component.
+- **Proper Use of @Input and @Output Variables** : If possible make sure variables and events are exposed using [@Input](https://angular.io/api/core/Input) & [@Output](https://angular.io/api/core/Output) tags are properly used to make the component modular.
 - Take a screenshot of component and keep it inside component page.
-
 - Open terminal and navigate to component i.e. `src/app/<component-name>`
-
 - Upload Component to Server using jennie
 
 ```bash
