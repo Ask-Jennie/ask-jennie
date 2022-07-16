@@ -1,14 +1,38 @@
-# Protocol : Downloading Angular Automations
-Angular automation protocol can be used in upload, download, update and delete. In this section we will learn how Downloading Angular Automations works. 
+# Downloading Angular Automation Module
 
-## Protocol Command
+Downloading an angular automation is quite simple, just go inside angular project and type below command
 
+```bash
+jennie angular automation download <module-name>
 ```
-jennie angular automations download <module-name>
-```
 
-## What happens?
-- Automation configuration is downloaded from jennie server.
-- For each supported event execute event based on event information. 
+Jennie will download the automation from server and execute all the events that are supported in automation.
 
-# Supported Events 
+Each component listed in [automation.ask-jennie.com](https://automations.ask-jennie.com) comes with events info.
+
+#### List of supported events
+
+<table>
+<tr>
+    <th>
+        Automation Name
+    </th>
+    <th>
+        Automation Description
+    </th>
+    <th>
+        Automation Sample
+    </th>
+</tr>
+<tr>
+<td>adding-ng-library</td>
+<td>Adds list of angular library to the project</td>
+<td><pre>
+{
+    "libs": [],
+    "event_name" : "adding-ng-library"
+}
+</pre></td>
+</tr>
+</table>
+

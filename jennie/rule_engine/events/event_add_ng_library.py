@@ -4,7 +4,7 @@ event_name : adding-npm-library
 config format:
 {
     "libs": [],
-    "event_name" : adding-npm-library
+    "event_name" : adding-ng-library
 }
 """
 import os
