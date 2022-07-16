@@ -77,8 +77,8 @@ def get_aws_instance():
     return aws
 
 def upload_file_to_s3():
-    file_to_upload_path = os.path.join(os.getcwd(), "dist/ask_jennie-0.0.2-py3-none-any.whl")
-    filename = "ask_jennie-0.0.2-py3-none-any.whl"
+    file_to_upload_path = os.path.join(os.getcwd(), "dist/ask_jennie-0.0.1-py3-none-any.whl")
+    filename = "ask_jennie-0.0.1-py3-none-any.whl"
     aws = get_aws_instance()
     resp = aws.upload_file(
         bucket=bucket,
@@ -91,4 +91,6 @@ def upload_file_to_s3():
 
 
 if __name__ == '__main__':
+    import os
+    os.system("./build.sh")
     upload_file_to_s3()

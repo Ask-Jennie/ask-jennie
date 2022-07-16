@@ -3,14 +3,16 @@
 ## Protocol Command
 
 The command saves angular component on the server.
-```
+
+```bash
 jennie angular automations upload
 ```
 
 The command should be executed from component inside angular project. The application name automatically taken by The software.
 
 ## Output 
-```
+
+```bash
 Title for automation module
 >> Application title 
 
@@ -24,7 +26,8 @@ Tag (optional) for automation module
 ## If Image File is not found under component directory
 
 Jennie software page ask for image
-```
+
+```bash
 Input path for application image
 >> /Users/jennie/Desktop/images.png
 ```

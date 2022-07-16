@@ -1,6 +1,6 @@
 import setuptools
 
-__version__ = "0.0.2"
+__version__ = "0.0.1"
 __description__ = 'The package targets protocol for uploading and reusing task and libraries'
 __author__ = 'ASK Jennie Developer <saurabh@ask-jennie.com>'
 
