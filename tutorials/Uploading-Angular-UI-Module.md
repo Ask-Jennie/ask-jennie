@@ -1,16 +1,18 @@
-# Protocol : Uploading-Angular-UI-Module.md
+# Uploading-Angular-UI-Module.md
 
-## Protocol Command
+## Steps to upload
 
-The command saves angular component on the server.
+- Check if your component is working properly and is independent of other project component.
+- If possible make @Input & @Output tags are properly used to make the component modular.
+- Take a screenshot of component and keep it inside component page.
+- Open terminal and navigate to component i.e. `src/app/<component-name>`
+- Upload Component to Server using jennie
 
 ```bash
-jennie angular automations upload
+jennie angular ui-lib upload
 ```
 
-The command should be executed from component inside angular project. The application name automatically taken by The software.
-
-## Output 
+#### Output 
 
 ```bash
 Title for automation module
@@ -22,10 +24,8 @@ Description for automation module
 Tag (optional) for automation module
 >> Category for UI Module, Optional if not used UI module will go into Others 
 ```
-
-## If Image File is not found under component directory
-
-Jennie software page ask for image
+ 
+If Image File is not found under component directory, option to enter image path is also shown.
 
 ```bash
 Input path for application image
@@ -35,7 +35,7 @@ Input path for application image
 The software then upload component files and create automation details which is further uploaded to server.
 Also jennie.conf.json is created under the directory.
 
-# jennie.conf.json
+### jennie.conf.json
 
 File store jennie configuration for specific automation.
 
