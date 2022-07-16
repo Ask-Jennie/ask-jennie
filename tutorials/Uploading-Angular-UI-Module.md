@@ -38,9 +38,9 @@ Input path for application image
 The software then upload component files and create automation details which is further uploaded to server.
 Also jennie.conf.json is created under the directory.
 
-### jennie.conf.json
+The final automation configuration is generated and stored in the same directory as `jennie.conf.json` file. 
 
-File store jennie configuration for specific automation.
+#### Example Configuration File
 
 ```json
 {
