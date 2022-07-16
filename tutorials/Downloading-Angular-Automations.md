@@ -25,6 +25,7 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
     </th>
 </tr>
 <tr>
+<tr>
 <td>adding-ng-library</td>
 <td>A list of all the libraries that are present in "libs" is added to project using `ng add` command.</td>
 <td><pre>
@@ -34,6 +35,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>angular-automations</td>
 <td>Download a list of angular automations using `jennie angular automation automation-name`. </td>
 <td><pre>
@@ -42,6 +45,9 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
     "event_name" : "angular-automations"
 }
 </pre>
+</td>
+</tr>
+<tr>
 <td>angular-ui-lib</td>
 <td>Download a list of angular ui modules using `jennie angular ui-lib module-name`. </td>
 <td><pre>
@@ -50,6 +56,9 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
     "event_name" : "angular-ui-lib"
 }
 </pre>
+</td>
+</tr>
+<tr>
 <td>copy-angular-component</td>
 <td>Create copies of list of component inside components array. The component would contain each and every file inside folder.</td>
 <td><pre>
@@ -62,6 +71,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>create-angular-component</td>
 <td>Creates angular component inside project using `ng g c NAME_OF_COMPONENT` </td>
 <td><pre>
@@ -71,6 +82,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>create-angular-services</td>
 <td>Creates angular service inside project using `ng g s NAME_OF_SERVICE` </td>
 <td><pre>
@@ -80,6 +93,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>download-files</td>
 <td>Download each file from `file_link` to location `out_path` inside from `files`.</td>
 <td><pre>
@@ -92,6 +107,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>install-npm-library</td>
 <td>Install all npm library from inside "libs" keyword to project.</td>
 <td><pre>
@@ -101,6 +118,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>update-angular-json</td>
 <td>Update angular.json inside project to add styles and script to the project.</td>
 <td><pre>
@@ -111,6 +130,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>update-angular-module</td>
 <td>Update project with a list of providers and modules inside file app.module.ts. </td>
 <td><pre>
@@ -125,6 +146,8 @@ Each component listed in [automation.ask-jennie.com](https://automations.ask-jen
 }
 </pre>
 </td>
+</tr>
+<tr>
 <td>update-angular-routes</td>
 <td>Add routes to angular project.</td>
 <td><pre>
